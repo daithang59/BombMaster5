@@ -92,7 +92,11 @@ namespace Server.Services
                 return new RegisterResult { Success = false, Message = "Không thể tạo tài khoản." };
             }
         }
-
+        public async Task<bool> IsUsernameExists(string username)
+        {
+            var response = await _client.GetAsync("Users/" + username);
+            return response.Body != "null";
+        }
 
         public async Task<LoginResult> LoginUser(string username, string password)
         {

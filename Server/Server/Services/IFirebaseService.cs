@@ -9,8 +9,9 @@ namespace Server.Services
         Task<LoginResult> LoginUser(string username, string password);
         Task<UpdatePasswordResult> UpdatePasswordInFirebase(string username, string newPassword);
         Task<bool> IsEmailExists(string email);
+        Task<bool> IsUsernameExists(string username); // Add this method to the interface
         Task SaveVerificationCodeToFirebase(string email, string verificationCode);
-        Task<VerificationCodeResult> GetVerificationCodeFromFirebase(string email); 
+        Task<VerificationCodeResult> GetVerificationCodeFromFirebase(string email);
     }
     public class LoginRequest
     {

@@ -1,17 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\",
+  "WorkspaceRootPath": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl7\\bombmaster4-main\\server\\server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl7\\bombmaster4-main\\server\\server\\services\\firebaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl8\\server\\server\\services\\firebaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\services\\firebaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl7\\bombmaster4-main\\server\\server\\models\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl8\\server\\server\\services\\ifirebaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\services\\ifirebaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl8\\server\\server\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl8\\server\\server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|c:\\users\\thang\\source\\repos\\epl8\\server\\server\\models\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0D5D1AE-96CD-49A5-9425-8A70306A932C}|Server\\Server.csproj|solutionrelative:server\\models\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,41 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DangKy.cs",
-              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Models\\DangKy.cs",
-              "RelativeDocumentMoniker": "Server\\Models\\DangKy.cs",
-              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Models\\DangKy.cs",
-              "RelativeToolTip": "Server\\Models\\DangKy.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Server\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T15:23:12.676Z"
+              "WhenOpened": "2024-12-29T13:07:07.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FirebaseService.cs",
-              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Services\\FirebaseService.cs",
-              "RelativeDocumentMoniker": "Server\\Services\\FirebaseService.cs",
-              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Services\\FirebaseService.cs",
-              "RelativeToolTip": "Server\\Services\\FirebaseService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAA3AAAAAAAAAA==",
+              "Title": "IFirebaseService.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Services\\IFirebaseService.cs",
+              "RelativeDocumentMoniker": "Server\\Services\\IFirebaseService.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Services\\IFirebaseService.cs*",
+              "RelativeToolTip": "Server\\Services\\IFirebaseService.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T15:21:14.975Z"
+              "WhenOpened": "2024-12-29T13:04:09.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DangKy.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Models\\DangKy.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\DangKy.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Models\\DangKy.cs",
+              "RelativeToolTip": "Server\\Models\\DangKy.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T15:23:12.676Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FirebaseService.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Services\\FirebaseService.cs",
+              "RelativeDocumentMoniker": "Server\\Services\\FirebaseService.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Services\\FirebaseService.cs",
+              "RelativeToolTip": "Server\\Services\\FirebaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T15:21:14.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Server\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\Server\\Server\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Server\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAnwCcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T15:16:59.438Z",
               "EditorCaption": ""

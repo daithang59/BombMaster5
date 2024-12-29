@@ -30,6 +30,18 @@ namespace Server.Controllers
                 return BadRequest(new { Success = false, Message = "Invalid user data." });
             }
 
+            // Check if the email already exists
+            if (await _firebaseService.IsEmailExists(register.Email))
+            {
+                return BadRequest(new { Success = false, Message = "Email already exists." });
+            }
+
+            // Check if the username already exists
+            if (await _firebaseService.IsUsernameExists(register.Username))
+            {
+                return BadRequest(new { Success = false, Message = "Username already exists." });
+            }
+
             var result = await _firebaseService.RegisterUser(register);
             return Ok(result);
         }
