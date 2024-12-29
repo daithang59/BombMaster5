@@ -35,6 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
             this.pnInfor = new System.Windows.Forms.Panel();
+            this.lblInforChat = new System.Windows.Forms.Label();
             this.lblInforExit = new System.Windows.Forms.Label();
             this.lblInforMenu = new System.Windows.Forms.Label();
             this.lblInforPandP = new System.Windows.Forms.Label();
@@ -183,6 +184,7 @@
             // 
             this.pnInfor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnInfor.BackColor = System.Drawing.Color.Black;
+            this.pnInfor.Controls.Add(this.lblInforChat);
             this.pnInfor.Controls.Add(this.lblInforExit);
             this.pnInfor.Controls.Add(this.lblInforMenu);
             this.pnInfor.Controls.Add(this.lblInforPandP);
@@ -221,6 +223,24 @@
             this.pnInfor.Name = "pnInfor";
             this.pnInfor.Size = new System.Drawing.Size(147, 800);
             this.pnInfor.TabIndex = 4;
+            // 
+            // lblInforChat
+            // 
+            this.lblInforChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInforChat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInforChat.Enabled = false;
+            this.lblInforChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforChat.ForeColor = System.Drawing.Color.White;
+            this.lblInforChat.Location = new System.Drawing.Point(8, 538);
+            this.lblInforChat.Name = "lblInforChat";
+            this.lblInforChat.Size = new System.Drawing.Size(126, 38);
+            this.lblInforChat.TabIndex = 65;
+            this.lblInforChat.Tag = "chat";
+            this.lblInforChat.Text = "Chat";
+            this.lblInforChat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInforChat.Click += new System.EventHandler(this.lblInfor_Click);
+            this.lblInforChat.MouseEnter += new System.EventHandler(this.lblInfor_MouseEnter);
+            this.lblInforChat.MouseLeave += new System.EventHandler(this.lblInfor_MouseLeave);
             // 
             // lblInforExit
             // 
@@ -1175,6 +1195,7 @@
         private System.Windows.Forms.Label lblInforExit;
         private System.Windows.Forms.Label lblInforMenu;
         private System.Windows.Forms.Label lblInforPandP;
+        private System.Windows.Forms.Label lblInforChat;
     }
 }
 

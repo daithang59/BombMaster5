@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\dangky_firebasedb\\datlaimatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|c:\\users\\thang\\source\\repos\\epl7\\bombmaster4-main\\dangky_firebasedb\\datlaimatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|solutionrelative:dangky_firebasedb\\datlaimatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|solutionrelative:dangky_firebasedb\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|c:\\users\\thang\\source\\repos\\epl7\\bombmaster4-main\\dangky_firebasedb\\sanhcho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\dangky_firebasedb\\sanhcho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|solutionrelative:dangky_firebasedb\\sanhcho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -41,8 +41,7 @@
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\DangKy_FirebaseDB\\SanhCho.cs [Design]",
               "RelativeToolTip": "DangKy_FirebaseDB\\SanhCho.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T03:38:57.713Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-29T03:38:57.713Z"
             },
             {
               "$type": "Document",
@@ -53,8 +52,7 @@
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\DangKy_FirebaseDB\\QuenMatKhau.cs [Design]",
               "RelativeToolTip": "DangKy_FirebaseDB\\QuenMatKhau.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T03:38:56.917Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-29T03:38:56.917Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\DangKy_FirebaseDB\\DangNhap.cs [Design]",
               "RelativeToolTip": "DangKy_FirebaseDB\\DangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T03:38:55.041Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-29T03:38:55.041Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\DangKy_FirebaseDB\\DangKy.cs [Design]",
               "RelativeToolTip": "DangKy_FirebaseDB\\DangKy.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T03:38:49.299Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-29T03:38:49.299Z"
             }
           ]
         }

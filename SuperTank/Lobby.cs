@@ -20,7 +20,7 @@ namespace SuperTank
         private bool IsHost; // Add this line to declare the IsHost variable
         private bool isFormCreated = false;
 
-        private ChatRoom _chatRoom;
+        public ChatRoom _chatRoom;
 
         public Lobby()
         {

@@ -32,6 +32,7 @@ namespace SuperTank
         private PlayerTank playerTank;
         private EnemyTankManagement enemyTankManager;
         private Item item;
+        public ChatRoom _chatRoom;
         #endregion Đối tượng
 
         #region thuộc tính thông tin
@@ -742,6 +743,8 @@ namespace SuperTank
             this.lblInforPandP.Enabled = true;
             this.lblInforMenu.Enabled = true;
             this.lblInforExit.Enabled = true;
+            this.lblInforChat.Enabled = true;
+
         }
 
         // tắt thuộc tính enable = false các nút level
@@ -750,6 +753,8 @@ namespace SuperTank
             this.lblInforPandP.Enabled = false;
             this.lblInforMenu.Enabled = false;
             this.lblInforExit.Enabled = false;
+            this.lblInforChat.Enabled = false; 
+
         }
 
         // nhấn các nút label trên giao diện
@@ -785,6 +790,14 @@ namespace SuperTank
                     // hiển thị form menu
                     this.formMenu.Show();
                     this.Close();
+                    break;
+                case "chat":
+                    if (_chatRoom == null || _chatRoom.IsDisposed)
+                    {
+                        _chatRoom = new ChatRoom();
+                        _chatRoom.FormClosing += ChatRoom_FormClosing;
+                    }
+                    _chatRoom.Show();
                     break;
                 case "exit":
                     Application.Exit();
@@ -939,6 +952,12 @@ namespace SuperTank
         {
 
         }
+        private void ChatRoom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _chatRoom.Hide();
+            e.Cancel = true;
+        }
+
         private void HandleReceiveMessage(string message)
         {
 

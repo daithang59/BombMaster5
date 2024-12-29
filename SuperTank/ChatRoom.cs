@@ -16,7 +16,9 @@ namespace SuperTank
         {
             InitializeComponent();
             SocketClient.OnReceiveMessage += UpdateMessage;
+            messageBox.KeyDown += new KeyEventHandler(messageBox_KeyDown); // Subscribe to KeyDown event
         }
+
         private void UpdateMessage(string message)
         {
             if (showMessage.InvokeRequired)
@@ -28,6 +30,7 @@ namespace SuperTank
                 showMessage.Items.Add(message.ToString());
             }
         }
+
         private void sendButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(messageBox.Text)) return;
@@ -39,5 +42,13 @@ namespace SuperTank
             SocketClient.SendData($"MESSAGE;{message}");
         }
 
+        private void messageBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sendButton_Click(this, new EventArgs()); // Call the send button click event handler
+                e.SuppressKeyPress = true; // Prevent the beep sound on Enter key press
+            }
+        }
     }
 }
