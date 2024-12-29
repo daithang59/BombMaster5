@@ -261,11 +261,14 @@ namespace ServerSocket
                     }
                     break;
 
-                case "UPDATE_GUN":
-                    string playerName1 = arrPayload[1];
-                    string gunName = arrPayload[2];
-                    string gunUpdateMessage = $"UPDATE_GUN;{playerName1};{gunName}";
-                    BroadcastMessage(gunUpdateMessage, player);
+                case "RELOAD":
+                    var __lobby = FindLobbyByPlayer(player);
+                    if (__lobby != null)
+                    {
+                        BroadcastMessageToLobby(__lobby, "RELOAD_MAP", player);
+                        UpdateInfo($"Reload map request from {player.PlayerName} to lobby {__lobby.RoomId}.");
+                    }
+
                     break;
                 case "PLAYER_SHOOT":
                     string shooterName = arrPayload[1];
@@ -274,33 +277,58 @@ namespace ServerSocket
                     string shootMessage = $"PLAYER_SHOOT;{shooterName};{shootDirection};{gunName2}";
                     BroadcastMessage(shootMessage, player);
                     break;
-                case "UPDATE_WALL_HEALTH": //Not used
-                    double health = double.Parse(arrPayload[1]);
-                    //UpdateWallHealth(health);
-                    break;
-
+               
                
                 default:
                     UpdateInfo($"Unknown command received: {arrPayload[0]} from {player.PlayerName}");
                     break;
             }
         }
-
+        private void BroadcastMessageToLobby(Lobby lobby, string message, PlayerTank sender)
+        {
+            byte[] msgBuffer = Encoding.UTF8.GetBytes(message);
+            foreach (var p in lobby.Players)
+            {
+                if (p.PlayerSocket != sender.PlayerSocket)
+                {
+                    try
+                    {
+                        if (p.PlayerSocket.Connected)
+                        {
+                            p.PlayerSocket.GetStream().Write(msgBuffer, 0, msgBuffer.Length);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        UpdateInfo($"Error broadcasting message: {ex.Message}");
+                    }
+                }
+            }
+        }
         private void HandleDisconnect(PlayerTank player)
         {
             connectedPlayers.Remove(player);
             player.PlayerSocket.Close(); // Đảm bảo đóng kết nối
+            player.IsConnected = false; // Cập nhật trạng thái kết nối
             UpdateInfo($"{player.PlayerName} has disconnected.");
-
-            string disconnectMessage = $"PLAYER_DISCONNECTED;{player.PlayerName}";
-            BroadcastMessage(disconnectMessage, player);
 
             // Xóa player khỏi lobby
             var lobby = FindLobbyByPlayer(player);
             if (lobby != null)
             {
                 lobby.Players.RemoveAll(p => p.PlayerName == player.PlayerName);
+
+                // Nếu số lượng người chơi trong lobby khác 0
+                if (lobby.Players.Count != 0)
+                {
+                    // Gửi thông báo cho người chơi còn lại trong lobby
+                    string reloadMessage = "RELOAD_MAP";
+                    BroadcastMessageToLobby(lobby, reloadMessage, player);
+                    UpdateInfo($"Reload map request sent to remaining players in lobby {lobby.RoomId}.");
+                }
             }
+            string disconnectMessage = $"PLAYER_DISCONNECTED;{player.PlayerName}";
+            BroadcastMessage(disconnectMessage, player);
         }
 
         private void CreateRoom(PlayerTank player, string id)
@@ -390,7 +418,7 @@ namespace ServerSocket
                         if (p != otherPlayer)
                         {
                             // Gửi thông tin vị trí của otherPlayer cho p
-                            string positionMessage = $"UPDATE_POSITION;{otherPlayer.PlayerName};{(int)otherPlayer.DirectionTank};{otherPlayer.RectX};{otherPlayer.RectY};{otherPlayer.frx_tank};{(int)otherPlayer.SkinTank}"; SendMessageToPlayer(p, positionMessage);
+                            string positionMessage = $"UPDATE_POSITION;{otherPlayer.PlayerName};{(int)otherPlayer.DirectionTank};{otherPlayer.RectX};{otherPlayer.RectY};{otherPlayer.frxTank};{(int)otherPlayer.SkinTank}"; SendMessageToPlayer(p, positionMessage);
                         }
                     }
                 }
@@ -462,9 +490,9 @@ namespace ServerSocket
                 }
 
                 player.SetLocation(x, y); // Lưu tọa độ dạng số ô
-                if (player.frx_tank != frx_tank)
+                if (player.frxTank != frx_tank)
                 {
-                    player.frx_tank = frx_tank;
+                    player.frxTank = frx_tank;
                 }
             }
             else
@@ -475,10 +503,10 @@ namespace ServerSocket
             // Cập nhật frx_tank
             // Mỗi khi nhận được UPDATE_POSITION (xe tăng di chuyển), frx_tank sẽ giảm đi 1
             // Khi frx_tank < 0, nó sẽ quay trở lại giá trị ban đầu (7)
-            player.frx_tank--;
-            if (player.frx_tank < 0)
+            player.frxTank--;
+            if (player.frxTank < 0)
             {
-                player.frx_tank = 7;
+                player.frxTank = 7;
             }
         }
 
@@ -486,15 +514,19 @@ namespace ServerSocket
         private void BroadcastMessage(string message, PlayerTank sender)
         {
             byte[] msgBuffer = Encoding.UTF8.GetBytes(message);
-            Lobby lobby = FindLobbyByPlayer(sender);
-            if (lobby != null)
+            foreach (var p in connectedPlayers)
             {
-                foreach (var player in lobby.Players)
+                // Không cần check p != sender vì đã xóa player khỏi connectedPlayers rồi
+                try
                 {
-                    if (player.PlayerSocket != sender.PlayerSocket)
+                    if (p.PlayerSocket.Connected)
                     {
-                        SendMessageToPlayer(player, message);
+                        p.PlayerSocket.GetStream().Write(msgBuffer, 0, msgBuffer.Length);
                     }
+                }
+                catch (Exception ex)
+                {
+                    UpdateInfo($"Error broadcasting message: {ex.Message}");
                 }
             }
         }
@@ -634,7 +666,7 @@ namespace ServerSocket
         private void BroadcastPlayerPosition(PlayerTank player, string direction, int x, int y, int frx_tank)
         {
             // Gửi giá trị int của Direction
-            string positionMessage = $"UPDATE_POSITION;{player.PlayerName};{(int)player.DirectionTank};{x};{y};{player.frx_tank};{(int)player.SkinTank}";
+            string positionMessage = $"UPDATE_POSITION;{player.PlayerName};{(int)player.DirectionTank};{x};{y};{player.frxTank};{(int)player.SkinTank}";
             Lobby lobby = FindLobbyByPlayer(player);
 
             if (lobby != null)
@@ -1482,8 +1514,8 @@ namespace ServerSocket
             public string PlayerName { get; set; }
             public bool IsReady { get; set; } = false;
             public new Direction DirectionTank { get; set; }
-            public int Frame { get; set; } // Thêm thuộc tính lưu frame (nếu cần)
-            public int frx_tank { get; set; } = 7; // Thêm thuộc tính frx_tank và khởi tạo giá trị ban đầu
+            public bool IsConnected { get; set; } = true;
+            public int frxTank { get; set; } = 7; // Thêm thuộc tính frx_tank và khởi tạo giá trị ban đầu
 
 
             public PlayerTank()

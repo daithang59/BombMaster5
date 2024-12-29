@@ -10,6 +10,7 @@ namespace SuperTank
     class Sound
     {
         private static SoundPlayer startSound;
+        private static SoundPlayer backGroundSound;
         private static SoundPlayer nextLevelSound;
         private static SoundPlayer gameOverSound;
         private static SoundPlayer gameWinSound;
@@ -20,6 +21,7 @@ namespace SuperTank
         public static void InitSound(String path)
         {
             Sound.startSound = new SoundPlayer(path + @"\Sounds\amThanhGameStart.wav");
+            Sound.backGroundSound = new SoundPlayer(path + @"\Sounds\SongGio.wav");
             Sound.nextLevelSound = new SoundPlayer(path + @"\Sounds\amThanhNextLevel.wav");
             Sound.gameOverSound = new SoundPlayer(path + @"\Sounds\amThanhGameOver.wav");
             Sound.gameWinSound = new SoundPlayer(path + @"\Sounds\amThanhChienThang.wav");
@@ -39,6 +41,10 @@ namespace SuperTank
         public static void StopStartSound()
         {
             Sound.startSound.Play();
+        }
+        public static void PlayBackgroundSound()
+        {
+            Sound.backGroundSound.Play();
         }
 
         // phát âm thanh next level

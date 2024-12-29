@@ -11,6 +11,7 @@ using System.IO;
 using SuperTank.General;
 using SuperTank.Objects;
 using SuperTank.WindowsForms;
+using System.Collections.Concurrent;
 
 namespace SuperTank
 {
@@ -33,6 +34,9 @@ namespace SuperTank
         private EnemyTankManagement enemyTankManager;
         private Item item;
         public ChatRoom _chatRoom;
+        private Dictionary<string, Rectangle> lastTankRects = new Dictionary<string, Rectangle>();
+        private List<PlayerTank> playersToRemove = new List<PlayerTank>();
+
         #endregion Đối tượng
 
         #region thuộc tính thông tin
@@ -58,18 +62,18 @@ namespace SuperTank
             this.level = 10;
             this.Size = new Size(500, 640);
             InitializeComponent();
+            formMenu = new frmMenu();
+
             // Đăng ký sự kiện
             //SocketClient.OnPlayerPositionUpdated += HandlePlayerPositionUpdated;
             //SocketClient.OnPlayerShoot += HandlePlayerShoot;
 
-            //SocketClient.OnReceiveMessage += HandleReceiveMessage;
+            SocketClient.OnReceiveMessage += HandleReceiveMessage;
         }
         private void frmGameMulti_Load(object sender, EventArgs e)
         {
             this.AutoScaleMode = AutoScaleMode.None;
             this.AutoSize = false; // Tắt tự động thay đổi kích thước
-
-
 
 
             // load ảnh heart cho hp playertank
@@ -105,31 +109,39 @@ namespace SuperTank
         // hàm khởi tạo game mới
         private void GameStart()
         {
-            // phát âm thanh
-            Sound.PlayStartSound();
-            // load map
+            // Dừng timer nếu đang chạy
+            tmrGameLoop.Stop();
+
+            // Phát âm thanh (nếu cần)
+            Sound.PlayBackgroundSound();
+
+            // Load map (giữ nguyên map hiện tại)
             Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", this.level),
                 Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
             this.map, Common.NUMBER_OBJECT_HEIGHT * Common.NUMBER_OBJECT_WIDTH);
-            // giải phóng danh sách tường cũ
+
+            // Giải phóng danh sách tường cũ
             wallManager.WallsClear();
-            // giải phóng danh sách địch
+            // Giải phóng danh sách địch
             enemyTankManager.EnemyTanksClear();
-            // giải phóng tất cả vụ nổ
+            // Giải phóng tất cả vụ nổ
             explosionManager.Explosions.Clear();
             GC.Collect();
-            // tạo danh sách tường
-            wallManager.CreatWall(this.map, this.level);
-            // khởi tạo danh sách địch
 
+            // Tạo danh sách tường
+            wallManager.CreatWall(this.map, this.level);
+
+            // Khởi tạo lại danh sách địch (nếu muốn giữ nguyên số lượng địch)
             enemyTankManager.Init_EnemyTankManagement(String.Format("{0}{1:00}.txt",
                 Common.path + @"\EnemyTankParameters\EnemyParameter", this.level));
-            // hiển thị thông tin level hiện tại
+
+            // Hiển thị thông tin level hiện tại
             lblLevel.Text = String.Format("LEVEL {0}", this.level);
-            // hiển thị số lượng xe tăng địch cần tiêu diệt bên bảng thông tin
+            // Hiển thị số lượng xe tăng địch cần tiêu diệt bên bảng thông tin
             ShowNumberEnemyTankDestroy(enemyTankManager.NumberEnemyTank());
-            // cập nhật vị trí xe tăng player
-            playerTank.SetLocation(2,2);
+
+            // Reset vị trí xe tăng của local player
+            playerTank.SetLocation(2, 2);
             // cập nhật năng lượng xe tăng player 
             playerTank.Energy = 100;
             // cập nhật khiên bảo vệ
@@ -140,25 +152,29 @@ namespace SuperTank
             this.lblHpTankPlayer.Width = playerTank.Energy;
             // cập nhật thông tin máu hiển thị của thành
             this.lblCastleBlood.Width = 60;
-            // cập nhật thông tin vật phẩm đang ăn
+
+            // Cập nhật thông tin vật phẩm
             this.picItem.Image = null;
             this.lblItemActive.Text = "";
-            // load hình castle 
+
+            // Load hình castle 
             bmpCastle = (Bitmap)Image.FromFile(Common.path + @"\Images\castle.png");
-            // điểm và số lượng địch tiêu diệt được là 0
+
+            // Reset điểm và số lượng địch tiêu diệt
             this.scores = 0;
             this.killed = 0;
-            // hủy hình ảnh item
+
+            // Hủy hình ảnh item
             item.BmpObject = null;
             item.IsOn = false;
-            //// bật biến hoạt động của item về false
-            //isTimeItemActive = false;
-            // bật các nút chức năng trên game 
-            this.LabelEnableOn();
-            // set thời gian item và chạy item
-            //timeItem = 50;
-            //timeItemActive = 15;
 
+            // Bật các nút chức năng trên game 
+            this.LabelEnableOn();
+
+            // Xóa background
+            Common.PaintClear(this.background);
+
+            // Bắt đầu lại timer
             tmrGameLoop.Start();
         }
 
@@ -173,38 +189,46 @@ namespace SuperTank
             // vẽ và di chuyển đạn player
             playerTank.ShowBulletAndMove(this.background);
             //tạo và di chuyển đạn của địch
-            foreach (var player in SocketClient.players)
+            if (SocketClient.localPlayer != null)
             {
-                if (player.Name == SocketClient.localPlayer.Name)
+                foreach (var player in SocketClient.players)
                 {
-                    if (!playerTank.IsWallCollision(wallManager.Walls, playerTank.DirectionTank))
+                    if (player.Name == SocketClient.localPlayer.Name)
                     {
-                        playerTank.Move();
-
-                        // GỬI THÔNG TIN VỀ SOCKETCLIENT SAU KHI DI CHUYỂN
-                        if ((DateTime.Now - lastSentPositionTime).TotalMilliseconds >= POSITION_UPDATE_INTERVAL_MS)
+                        if (!playerTank.IsWallCollision(wallManager.Walls, playerTank.DirectionTank))
                         {
-                            playerTank.frx_tank--;
-                            if (playerTank.frx_tank < 0) playerTank.frx_tank = 7;
+                            playerTank.Move();
 
-                            SocketClient.SendPlayerPosition(SocketClient.localPlayer.Name, (SocketClient.Direction)playerTank.DirectionTank, playerTank.Rect.Left, playerTank.Rect.Top, playerTank.frx_tank, (SocketClient.Skin)playerTank.SkinTank);
-                            lastSentPositionTime = DateTime.Now;
+                            // GỬI THÔNG TIN VỀ SOCKETCLIENT SAU KHI DI CHUYỂN
+                            if ((DateTime.Now - lastSentPositionTime).TotalMilliseconds >= POSITION_UPDATE_INTERVAL_MS)
+                            {
+                                playerTank.frx_tank--;
+                                if (playerTank.frx_tank < 0) playerTank.frx_tank = 7;
+
+                                // Kiểm tra null trước khi gửi
+                                if (SocketClient.localPlayer != null)
+                                {
+                                    SocketClient.SendPlayerPosition(SocketClient.localPlayer.Name, (SocketClient.Direction)playerTank.DirectionTank, playerTank.Rect.Left, playerTank.Rect.Top, playerTank.frx_tank, (SocketClient.Skin)playerTank.SkinTank);
+                                }
+
+                                lastSentPositionTime = DateTime.Now;
+                            }
                         }
+                        playerTank.Show(this.background);
                     }
-                    playerTank.Show(this.background);
-                }
-                else
-                {
-                    // Vẽ xe tăng của người chơi khác
-                    DrawOtherPlayerTank(player);
+                    else
+                    {
+                        // Vẽ xe tăng của người chơi khác
+                        DrawOtherPlayerTank(player);
+                    }
                 }
             }
 
-            foreach (EnemyTank enemyTank in enemyTankManager.EnemyTanks)
-            {
-                enemyTank.CreatBullet(@"\Images\triangleBullet2.png", @"\Images\rocketBullet2.png");
-                enemyTank.ShowBulletAndMove(this.background);
-            }
+            //foreach (EnemyTank enemyTank in enemyTankManager.EnemyTanks)
+            //{
+            //    enemyTank.CreatBullet(@"\Images\triangleBullet2.png", @"\Images\rocketBullet2.png");
+            //    enemyTank.ShowBulletAndMove(this.background);
+            //}
 
             #region đạn player và đạn địch trúng tường
             for (int i = wallManager.Walls.Count - 1; i >= 0; i--)
@@ -315,7 +339,7 @@ namespace SuperTank
                         if (!playerTank.IsShield)
                         {
                             // cập nhật lại thông tin vị trí cho xe tăng player
-                            playerTank.SetLocation(2,2);
+                            playerTank.SetLocation(2, 2);
                             playerTank.IsActivate = false;
                             // cập nhật năng lượng của xe tăng player
                             playerTank.Energy -= enemyTankManager.EnemyTanks[i].Bullets[j].Power;
@@ -431,8 +455,9 @@ namespace SuperTank
                     playerTank.frx_tank--;
                     if (playerTank.frx_tank < 0) playerTank.frx_tank = 7;
 
-                    SocketClient.SendPlayerPosition(SocketClient.localPlayer.Name, (SocketClient.Direction)playerTank.DirectionTank, playerTank.Rect.Left, playerTank.Rect.Top, playerTank.frx_tank, (SocketClient.Skin)playerTank.SkinTank);
-                    lastSentPositionTime = DateTime.Now;
+                    if (SocketClient.localPlayer != null)
+                     SocketClient.SendPlayerPosition(SocketClient.localPlayer.Name, (SocketClient.Direction)playerTank.DirectionTank, playerTank.Rect.Left, playerTank.Rect.Top, playerTank.frx_tank, (SocketClient.Skin)playerTank.SkinTank);
+                     lastSentPositionTime = DateTime.Now;
                 }
             }
             // hiển thị xe tăng của player
@@ -442,7 +467,21 @@ namespace SuperTank
             //hiển thị vụ nổ
             explosionManager.ShowAllExplosion(this.background);
 
-            // vật phẩm được phép hiển thị
+            // Vẽ background lên vị trí xe tăng đã thoát
+
+            using (Graphics g = Graphics.FromImage(this.background))
+            {
+                foreach (var player in playersToRemove)
+                {
+                    // Vẽ background lên vị trí xe tăng đã thoát
+                    Rectangle rect = new Rectangle((int)player.Position.X, (int)player.Position.Y, Common.tankSize, Common.tankSize);
+                    g.DrawImage(this.background, rect, rect, GraphicsUnit.Pixel);
+
+                    // Xóa player khỏi danh sách chính
+                    SocketClient.players.Remove(player);
+                }
+                playersToRemove.Clear(); // Xóa danh sách chờ
+            }
 
             //vẽ lại Bitmap background lên form
             graphics.DrawImageUnscaled(this.background, 0, 0);
@@ -518,6 +557,8 @@ namespace SuperTank
             // Vẽ xe tăng của người chơi khác với skin và hướng tương ứng
             Common.PaintObject(this.background, rotatedBmp, (int)otherPlayer.Position.X, (int)otherPlayer.Position.Y,
                                xFrame, yFrame, Common.tankSize, Common.tankSize);
+            //// Lưu lại vị trí và kích thước của xe tăng
+            //lastTankRects[otherPlayer.Name] = new Rectangle((int)otherPlayer.Position.X, (int)otherPlayer.Position.Y, Common.tankSize, Common.tankSize);
 
             rotatedBmp.Dispose(); // Giải phóng tài nguyên
         }
@@ -539,14 +580,14 @@ namespace SuperTank
                     break;
             }
 
-        }        
+        }
         // hàm delay vòng lặp game sau khi game kết thúc
 
 
-            #endregion Vòng lặp game
+        #endregion Vòng lặp game
 
-            #region sự kiện phím
-            // nhấn phím di chuyển 
+        #region sự kiện phím
+        // nhấn phím di chuyển 
         private void frmGameMulti_KeyDown(object sender, KeyEventArgs e)
         {
             // biến kiểm tra xem có phải ấn nút di chuyển hay không
@@ -753,7 +794,7 @@ namespace SuperTank
             this.lblInforPandP.Enabled = false;
             this.lblInforMenu.Enabled = false;
             this.lblInforExit.Enabled = false;
-            this.lblInforChat.Enabled = false; 
+            this.lblInforChat.Enabled = false;
 
         }
 
@@ -786,6 +827,8 @@ namespace SuperTank
                     break;
                 case "menu":
                     // bật các button level của form menu
+                    SocketClient.SendData("RELOAD"); // Gửi tín hiệu yêu cầu load lại map
+                    SocketClient.Disconnect();
                     this.formMenu.ShowOpenedLevels(PlayerInfor.level);
                     // hiển thị form menu
                     this.formMenu.Show();
@@ -800,6 +843,8 @@ namespace SuperTank
                     _chatRoom.Show();
                     break;
                 case "exit":
+                    SocketClient.SendData("RELOAD"); // Gửi tín hiệu yêu cầu load lại map
+                    SocketClient.Disconnect();
                     Application.Exit();
                     break;
             }
@@ -937,7 +982,7 @@ namespace SuperTank
         }
         #endregion các hàm sự kiện thanh tiêu đề
 
-      
+
         private void HandlePlayerPositionUpdated(PlayerTank player)
         {
             // Cập nhật vị trí xe tăng của người chơi khác trên màn hình
@@ -960,8 +1005,61 @@ namespace SuperTank
 
         private void HandleReceiveMessage(string message)
         {
+            string[] parts = message.Split(';');
+            string command = parts[0];
 
+            switch (command)
+            {
+                case "PLAYER_DISCONNECTED":
+                    string playerName = parts[1];
+                    // Sử dụng Invoke để gọi HandlePlayerDisconnected trên luồng UI
+                    if (this.InvokeRequired)
+                    {
+                        this.Invoke(new Action<string>(HandlePlayerDisconnected), playerName);
+                    }
+                    else
+                    {
+                        HandlePlayerDisconnected(playerName);
+                    }
+                    break;
+                case "RELOAD_MAP":
+                    // Sử dụng Invoke để gọi ReloadGame trên luồng UI
+                    if (this.InvokeRequired)
+                    {
+                        this.Invoke(new Action(ReloadGame));
+                    }
+                    else
+                    {
+                        ReloadGame();
+                    }
+                    break;
+                    // ... xử lý các thông điệp khác ...
+            }
         }
 
+        private void ReloadGame()
+        {
+            // Xóa danh sách người chơi
+            SocketClient.players.Clear();
+
+            // Thêm localPlayer vào danh sách người chơi
+            if (SocketClient.localPlayer != null)
+            {
+                SocketClient.players.Add(SocketClient.localPlayer);
+            }
+
+            // Load lại game
+            GameStart();
+        }
+        private void HandlePlayerDisconnected(string playerName)
+        {
+            // Tìm và xóa người chơi đã thoát khỏi SocketClient.players
+            PlayerTank playerToRemove = SocketClient.players.FirstOrDefault(p => p.Name == playerName);
+            if (playerToRemove != null)
+            {
+                SocketClient.players.Remove(playerToRemove);
+            }
+        }
     }
 }
+

@@ -37,7 +37,6 @@ namespace SuperTank
 
             string message = String.Format($"[{SocketClient.localPlayer.Name}]: {messageBox.Text}");
             messageBox.Clear();
-            showMessage.Items.Add(message);
 
             SocketClient.SendData($"MESSAGE;{message}");
         }

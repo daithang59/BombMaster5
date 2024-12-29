@@ -18,7 +18,8 @@ namespace SuperTank.Objects
         public PointF Position { get; set; }
         public bool IsReady { get; set; } = false;
         public string Name { get; set; }
-        public int Frame { get; set; } // Thêm thuộc tính lưu frame (nếu cần)
+        public bool IsConnected { get; set; } = true;
+
 
 
         public PlayerTank()
