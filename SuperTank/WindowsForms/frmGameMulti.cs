@@ -47,17 +47,6 @@ namespace SuperTank
         private int scores;
         private int killed;
         private InforStyle inforStyle;
-        private List<Skin> availableSkins = new List<Skin>
-            {
-                Skin.eGreen,
-                Skin.eRed,
-                Skin.eYellow,
-                Skin.eBlue,
-                Skin.ePurple,
-                Skin.eLightBlue,
-                Skin.eOrange,
-                Skin.ePink
-            };
         #endregion thuộc tính thông tin
 
         #region thuộc tính thời gian
@@ -206,8 +195,6 @@ namespace SuperTank
             {
                 var playersCopy = SocketClient.players.ToList();
 
-                Skin skin = Skin.eYellow;
-
                 foreach (var player in playersCopy)
                 {
                     if (player.Name == SocketClient.localPlayer.Name)
@@ -235,14 +222,6 @@ namespace SuperTank
                     }
                     else
                     {
-                        //if (!player.IsSkinAssigned)
-                        //{
-                        //    player.SkinTank = GetRandomSkin(availableSkins, skin);
-                        //    player.IsSkinAssigned = true;
-                        //}
-
-                        skin = player.SkinTank;
-
                         // Vẽ xe tăng của người chơi khác
                         DrawOtherPlayerTank(player);
                     }
@@ -1069,9 +1048,9 @@ namespace SuperTank
                     }
                     break;
                 case "SKIN_INFO":
-                    int skinValue = int.Parse(parts[1]);
-                    SocketClient.localPlayer.SkinTank = (Skin)skinValue;
-                    SocketClient.localPlayer.IsSkinAssigned = true;
+                    //int skinValue = int.Parse(parts[1]);
+                    //SocketClient.localPlayer.SkinTank = (Skin)skinValue;
+                    //SocketClient.localPlayer.IsSkinAssigned = true;
                     break;
                     // ... xử lý các thông điệp khác ...
             }

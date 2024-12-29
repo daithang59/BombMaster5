@@ -465,7 +465,7 @@ namespace SuperTank
                     else
                     {
                         Debug.WriteLine($"Invalid skinTank received: {skinTank}. Using default.");
-                        playerToUpdate.SkinTank = General.Skin.eYellow; // Giá trị mặc định
+                        playerToUpdate.SkinTank = General.Skin.ePink; // Giá trị mặc định
                     }
 
                     // Cập nhật frx_tank

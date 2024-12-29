@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\THANG\\source\\repos\\EPL8\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|c:\\users\\thang\\source\\repos\\epl8\\supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|c:\\users\\thang\\source\\repos\\epl8\\supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\objects\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\objects\\tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,18 +74,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "frmGame.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGame.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs [Design]",
               "RelativeToolTip": "SuperTank\\WindowsForms\\frmGame.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T13:18:28.236Z"
+              "WhenOpened": "2024-12-29T13:18:28.236Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -101,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerTank.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\Objects\\PlayerTank.cs",
               "RelativeDocumentMoniker": "SuperTank\\Objects\\PlayerTank.cs",
@@ -113,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frmGame.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGame.cs",
@@ -121,7 +122,8 @@
               "RelativeToolTip": "SuperTank\\WindowsForms\\frmGame.cs",
               "ViewState": "AgIAAEoBAAAAAAAAAAAkwGMBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T13:18:29.601Z"
+              "WhenOpened": "2024-12-29T13:18:29.601Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -172,26 +174,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SocketClient.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\SocketClient.cs",
               "RelativeDocumentMoniker": "SuperTank\\SocketClient.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\SocketClient.cs",
               "RelativeToolTip": "SuperTank\\SocketClient.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAiwDkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T09:32:28.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "frmGameMulti.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGameMulti.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwCsAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAADwv8UAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T09:31:46.254Z",
               "EditorCaption": ""
@@ -202,10 +204,11 @@
               "Title": "frmGameMulti.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGameMulti.cs",
-              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs [Design]*",
-              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs [Design]*",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs [Design]",
+              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T09:31:42.592Z"
+              "WhenOpened": "2024-12-29T09:31:42.592Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",

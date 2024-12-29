@@ -22,7 +22,6 @@ namespace ServerSocket
         {
             Skin.eGreen,
             Skin.eRed,
-            Skin.eYellow,
             Skin.eBlue,
             Skin.ePurple,
             Skin.eLightBlue,
@@ -33,7 +32,6 @@ namespace ServerSocket
 
         //private const int MAP_WIDTH = 1024;
         //private const int MAP_HEIGHT = 768;
-        //private const int SPAWN_INTERVAL = 30000; // 30 seconds
 
         private Dictionary<string, System.Threading.Timer> lobbyTimers = new Dictionary<string, System.Threading.Timer>();
         //private Dictionary<string, System.Threading.Timer> zombieSpawnTimers = new Dictionary<string, System.Threading.Timer>();
@@ -270,7 +268,7 @@ namespace ServerSocket
 
                     if (player != null)
                     {
-                        UpdatePlayerPosition(player, direction, x, y, frx_tank, (Skin)skinTank); // Sửa
+                        UpdatePlayerPosition(player, direction, x, y, frx_tank, (Skin)skinTank);
                         BroadcastPlayerPosition(player, direction, x, y, frx_tank);
                     }
                     else
@@ -632,9 +630,6 @@ namespace ServerSocket
         {
             if (availableSkins.Count == 0)
             {
-                // Nếu không còn skin nào, bạn có thể xử lý theo cách bạn muốn, 
-                // ví dụ: thông báo lỗi hoặc gán lại skin từ đầu.
-                // Ở đây, tôi sẽ reset danh sách:
                 ResetAvailableSkins();
             }
 
