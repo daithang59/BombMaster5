@@ -52,12 +52,9 @@ namespace SuperTank
         private static int maxQueueSize = 1000; // Giới hạn kích thước hàng đợi
         private static ConcurrentQueue<string> messageQueue = new ConcurrentQueue<string>();
         private static AutoResetEvent messageReceivedEvent = new AutoResetEvent(false);
+        public static Random random = new Random();
+        
 
-
-        public static void SetLocalPlayer(string playerName)
-        {
-            localPlayer = new PlayerTank { Name = playerName };
-        }
         // Kết nối đến server
         public static void ConnectToServer(System.Net.IPEndPoint serverEP)
         {

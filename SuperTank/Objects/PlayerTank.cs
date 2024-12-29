@@ -19,6 +19,8 @@ namespace SuperTank.Objects
         public bool IsReady { get; set; } = false;
         public string Name { get; set; }
         public bool IsConnected { get; set; } = true;
+        public bool IsSkinAssigned { get; set; } = false;
+
 
 
 

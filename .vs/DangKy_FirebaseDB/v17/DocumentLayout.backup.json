@@ -3,7 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\THANG\\source\\repos\\EPL8\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|c:\\users\\thang\\source\\repos\\epl8\\dangky_firebasedb\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85CD2719-5683-4238-855C-15F5994941C3}|ServerSocket\\ServerSocket.csproj|c:\\users\\thang\\source\\repos\\epl8\\serversocket\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85CD2719-5683-4238-855C-15F5994941C3}|ServerSocket\\ServerSocket.csproj|solutionrelative:serversocket\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|c:\\users\\thang\\source\\repos\\epl8\\supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\objects\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\objects\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\objects\\tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\objects\\tank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\dangky_firebasedb\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|solutionrelative:dangky_firebasedb\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,20 +39,12 @@
       "RelativeMoniker": "D:0:0:{A09795AE-9E38-4F04-8BD6-3380D5C05642}|DangKy_FirebaseDB\\SinIn_Up.csproj|solutionrelative:dangky_firebasedb\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|c:\\users\\thang\\source\\repos\\epl8\\supertank\\general\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\general\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\general\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\windowsforms\\frmgamemulti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|solutionrelative:supertank\\socketclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49F5BC8B-5D4B-4913-BD9B-C39295778F89}|SuperTank\\SuperTank.csproj|C:\\Users\\THANG\\source\\repos\\EPL8\\supertank\\windowsforms\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,6 +83,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Server.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\ServerSocket\\Server.cs",
+              "RelativeDocumentMoniker": "ServerSocket\\Server.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\ServerSocket\\Server.cs",
+              "RelativeToolTip": "ServerSocket\\Server.cs",
+              "ViewState": "AgIAAHUCAAAAAAAAAAAkwIsCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T14:17:11.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmGame.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs",
+              "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGame.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs [Design]",
+              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGame.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T13:18:28.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Tank.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\Objects\\Tank.cs",
+              "RelativeDocumentMoniker": "SuperTank\\Objects\\Tank.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\Objects\\Tank.cs",
+              "RelativeToolTip": "SuperTank\\Objects\\Tank.cs",
+              "ViewState": "AgIAAJEBAAAAAAAAAADwv6IBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T13:21:44.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerTank.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\Objects\\PlayerTank.cs",
+              "RelativeDocumentMoniker": "SuperTank\\Objects\\PlayerTank.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\Objects\\PlayerTank.cs",
+              "RelativeToolTip": "SuperTank\\Objects\\PlayerTank.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T13:21:27.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmGame.cs",
+              "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs",
+              "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGame.cs",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGame.cs",
+              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGame.cs",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAkwGMBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T13:18:29.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "DangKy.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\DangKy.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\DangKy.cs",
@@ -70,12 +151,11 @@
               "RelativeToolTip": "DangKy_FirebaseDB\\DangKy.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T13:00:05.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-29T13:00:05.44Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Sound.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\General\\Sound.cs",
               "RelativeDocumentMoniker": "SuperTank\\General\\Sound.cs",
@@ -83,12 +163,11 @@
               "RelativeToolTip": "SuperTank\\General\\Sound.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T09:39:34.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-29T09:39:34.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "frmMenu.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmMenu.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmMenu.cs",
@@ -100,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "frmMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmMenu.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmMenu.cs",
@@ -111,42 +190,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "SocketClient.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\SocketClient.cs",
               "RelativeDocumentMoniker": "SuperTank\\SocketClient.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\SocketClient.cs",
               "RelativeToolTip": "SuperTank\\SocketClient.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAjwEAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T09:32:28.415Z"
+              "WhenOpened": "2024-12-29T09:32:28.415Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "frmGameMulti.cs",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGameMulti.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAQwHIAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAANwAAAAAAAAAAAD4v/EAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T09:31:46.254Z"
+              "WhenOpened": "2024-12-29T09:31:46.254Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "frmGameMulti.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs",
               "RelativeDocumentMoniker": "SuperTank\\WindowsForms\\frmGameMulti.cs",
-              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs [Design]",
-              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs [Design]",
+              "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\SuperTank\\WindowsForms\\frmGameMulti.cs [Design]*",
+              "RelativeToolTip": "SuperTank\\WindowsForms\\frmGameMulti.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-29T09:31:42.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "SanhCho.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\SanhCho.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\SanhCho.cs",
@@ -157,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "QuenMatKhau.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\QuenMatKhau.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\QuenMatKhau.cs",
@@ -168,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "DatLaiMatKhau.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\DatLaiMatKhau.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\DatLaiMatKhau.cs",
@@ -179,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "DangNhap.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\DangNhap.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\DangNhap.cs",
@@ -190,15 +271,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "DangKy.cs [Design]",
               "DocumentMoniker": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\DangKy.cs",
               "RelativeDocumentMoniker": "DangKy_FirebaseDB\\DangKy.cs",
               "ToolTip": "C:\\Users\\THANG\\source\\repos\\EPL8\\DangKy_FirebaseDB\\DangKy.cs [Design]",
               "RelativeToolTip": "DangKy_FirebaseDB\\DangKy.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T03:38:49.299Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-29T03:38:49.299Z"
             }
           ]
         }

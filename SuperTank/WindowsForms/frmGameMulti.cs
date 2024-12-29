@@ -36,6 +36,8 @@ namespace SuperTank
         public ChatRoom _chatRoom;
         private Dictionary<string, Rectangle> lastTankRects = new Dictionary<string, Rectangle>();
         private List<PlayerTank> playersToRemove = new List<PlayerTank>();
+        private static Random random = new Random(); // Add this line at the beginning of the class
+
 
         #endregion Đối tượng
 
@@ -45,6 +47,17 @@ namespace SuperTank
         private int scores;
         private int killed;
         private InforStyle inforStyle;
+        private List<Skin> availableSkins = new List<Skin>
+            {
+                Skin.eGreen,
+                Skin.eRed,
+                Skin.eYellow,
+                Skin.eBlue,
+                Skin.ePurple,
+                Skin.eLightBlue,
+                Skin.eOrange,
+                Skin.ePink
+            };
         #endregion thuộc tính thông tin
 
         #region thuộc tính thời gian
@@ -63,7 +76,6 @@ namespace SuperTank
             this.Size = new Size(500, 640);
             InitializeComponent();
             formMenu = new frmMenu();
-
             // Đăng ký sự kiện
             //SocketClient.OnPlayerPositionUpdated += HandlePlayerPositionUpdated;
             //SocketClient.OnPlayerShoot += HandlePlayerShoot;
@@ -174,6 +186,7 @@ namespace SuperTank
             // Xóa background
             Common.PaintClear(this.background);
 
+
             // Bắt đầu lại timer
             tmrGameLoop.Start();
         }
@@ -191,7 +204,11 @@ namespace SuperTank
             //tạo và di chuyển đạn của địch
             if (SocketClient.localPlayer != null)
             {
-                foreach (var player in SocketClient.players)
+                var playersCopy = SocketClient.players.ToList();
+
+                Skin skin = Skin.eYellow;
+
+                foreach (var player in playersCopy)
                 {
                     if (player.Name == SocketClient.localPlayer.Name)
                     {
@@ -218,6 +235,14 @@ namespace SuperTank
                     }
                     else
                     {
+                        //if (!player.IsSkinAssigned)
+                        //{
+                        //    player.SkinTank = GetRandomSkin(availableSkins, skin);
+                        //    player.IsSkinAssigned = true;
+                        //}
+
+                        skin = player.SkinTank;
+
                         // Vẽ xe tăng của người chơi khác
                         DrawOtherPlayerTank(player);
                     }
@@ -486,7 +511,19 @@ namespace SuperTank
             //vẽ lại Bitmap background lên form
             graphics.DrawImageUnscaled(this.background, 0, 0);
         }
+        
 
+        //public static Skin GetRandomSkin(List <Skin> availableSkins, Skin currentSkin)
+        //{
+        //    // Create a list of available skins
+            
+        //    // Remove the current skin from the list
+        //    availableSkins.Remove(currentSkin);
+
+        //    // Randomly select a skin from the remaining skins
+        //    int index = random.Next(availableSkins.Count);
+        //    return availableSkins[index];
+        //}
         private void DrawOtherPlayerTank(PlayerTank otherPlayer)
         {
             // Load hình ảnh nếu chưa load
@@ -498,7 +535,7 @@ namespace SuperTank
             // Tạo bản sao của bitmap để xoay (nếu cần)
             Bitmap rotatedBmp = (Bitmap)otherPlayer.BmpObject.Clone();
 
-            //Xoay bản sao dựa vào DirectionTank
+            // Xoay bản sao dựa vào DirectionTank
             switch (otherPlayer.DirectionTank)
             {
                 case Direction.eUp:
@@ -557,8 +594,6 @@ namespace SuperTank
             // Vẽ xe tăng của người chơi khác với skin và hướng tương ứng
             Common.PaintObject(this.background, rotatedBmp, (int)otherPlayer.Position.X, (int)otherPlayer.Position.Y,
                                xFrame, yFrame, Common.tankSize, Common.tankSize);
-            //// Lưu lại vị trí và kích thước của xe tăng
-            //lastTankRects[otherPlayer.Name] = new Rectangle((int)otherPlayer.Position.X, (int)otherPlayer.Position.Y, Common.tankSize, Common.tankSize);
 
             rotatedBmp.Dispose(); // Giải phóng tài nguyên
         }
@@ -1032,6 +1067,11 @@ namespace SuperTank
                     {
                         ReloadGame();
                     }
+                    break;
+                case "SKIN_INFO":
+                    int skinValue = int.Parse(parts[1]);
+                    SocketClient.localPlayer.SkinTank = (Skin)skinValue;
+                    SocketClient.localPlayer.IsSkinAssigned = true;
                     break;
                     // ... xử lý các thông điệp khác ...
             }
