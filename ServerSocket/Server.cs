@@ -17,7 +17,19 @@ namespace ServerSocket
         private static List<Skin> usedSkins = new List<Skin>();
         private static readonly int port = 8989;
         private TcpListener server;
-        
+        private static Random random = new Random();
+        private static List<Skin> availableSkins = new List<Skin>
+        {
+            Skin.eGreen,
+            Skin.eRed,
+            Skin.eYellow,
+            Skin.eBlue,
+            Skin.ePurple,
+            Skin.eLightBlue,
+            Skin.eOrange,
+            Skin.ePink
+        };
+
 
         //private const int MAP_WIDTH = 1024;
         //private const int MAP_HEIGHT = 768;
@@ -173,6 +185,12 @@ namespace ServerSocket
                         player.IsHost = true;
                         UpdateInfo($"{player.PlayerName} is the host.");
                     }
+                    // Gán skin cho người chơi khi kết nối
+                    player.SkinTank = GetRandomSkin();
+
+                    // Gửi thông tin skin về cho client
+                    string skinInfo = $"SKIN_INFO;{(int)player.SkinTank}";
+                    SendMessageToPlayer(player, skinInfo);
                     break;
                 case "DISCONNECT":
                     HandleDisconnect(player);
@@ -610,7 +628,34 @@ namespace ServerSocket
                 }
             }
         }
+        private Skin GetRandomSkin()
+        {
+            if (availableSkins.Count == 0)
+            {
+                // Nếu không còn skin nào, bạn có thể xử lý theo cách bạn muốn, 
+                // ví dụ: thông báo lỗi hoặc gán lại skin từ đầu.
+                // Ở đây, tôi sẽ reset danh sách:
+                ResetAvailableSkins();
+            }
 
+            int index = random.Next(availableSkins.Count);
+            Skin selectedSkin = availableSkins[index];
+            availableSkins.RemoveAt(index);
+            return selectedSkin;
+        }
+        private void ResetAvailableSkins()
+        {
+            availableSkins = new List<Skin>
+            {
+                Skin.eGreen,
+                Skin.eRed,
+                Skin.eBlue,
+                Skin.ePurple,
+                Skin.eLightBlue,
+                Skin.eOrange,
+                Skin.ePink
+            };
+        }
         public void UpdateInfo(string message)
         {
             if (ShowingInfo.InvokeRequired)
