@@ -197,10 +197,6 @@
     <None Include="Resources\Thiết kế chưa có tên %285%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Server\Server\Server.csproj">
-      <Project>{5e3d501f-5b56-446d-bb72-4c01e142f32a}</Project>
-      <Name>Server</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuperTank\SuperTank.csproj">
       <Project>{49f5bc8b-5d4b-4913-bd9b-c39295778f89}</Project>
       <Name>SuperTank</Name>

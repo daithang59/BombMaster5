@@ -1716,23 +1716,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nguye\\.nuget\\packages\\": {},
+    "C:\\Users\\THANG\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LTMCB\\DOAN\\pexa2612\\Server\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "D:\\LTMCB\\DOAN\\pexa2612\\Server\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\LTMCB\\DOAN\\pexa2612\\Server\\Server\\obj\\",
+      "projectPath": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\THANG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\THANG\\source\\repos\\EPL7\\Bombmaster4-main\\Server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\THANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
